@@ -1,0 +1,31 @@
+import { Hotel, Car, Building2, Users } from 'lucide-react';
+import { CLINIC } from '../clinic.config';
+import { SectionHead } from './Section';
+
+const ICONS = [Building2, Hotel, Car, Users];
+
+export default function Facilities() {
+  const items: any[] = (CLINIC as any).facilities || [];
+  if (!items.length) return null;
+  return (
+    <section className="py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionHead kicker="Estrutura premium" title="Mais que um tratamento, uma experiência" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {items.map((f: any, i: number) => {
+            const Icon = ICONS[i % ICONS.length];
+            return (
+              <div key={i} className="reveal bg-white p-7 rounded-2xl border hover:-translate-y-1 transition" style={{ borderColor: `${CLINIC.brand.primary}15`, transitionDelay: `${i*40}ms` }}>
+                <div className="w-12 h-12 rounded-xl grid place-items-center mb-4" style={{ background: 'var(--color-primary)' }}>
+                  <Icon size={22} color={CLINIC.brand.accent} />
+                </div>
+                <h3 className="font-display text-xl font-semibold mb-2" style={{ color: 'var(--color-primary)' }}>{f.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: `${CLINIC.brand.ink}aa` }}>{f.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
