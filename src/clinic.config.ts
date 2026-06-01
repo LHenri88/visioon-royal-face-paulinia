@@ -51,25 +51,25 @@ export const CLINIC = {
       "id": "harmonizacao-facial",
       "name": "Harmonização Facial",
       "desc": "Combo top — equilíbrio facial pensado pra você.",
-      "img": "https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=800"
+      "img": "https://images.unsplash.com/photo-1614859270522-fbeed5b1d54e?w=800"
     },
     {
       "id": "preenchimento-labial",
       "name": "Boca dos Sonhos",
       "desc": "Ácido hialurônico premium com aplicação delicada.",
-      "img": "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800"
+      "img": "https://images.unsplash.com/photo-1614859124192-30334e3f2c1c?w=800"
     },
     {
       "id": "botox",
       "name": "Botox Preventivo",
       "desc": "Pra quem quer começar cedo, sem exagero.",
-      "img": "https://images.unsplash.com/photo-1571442463800-1337d7af9d2f?w=800"
+      "img": "https://images.unsplash.com/photo-1612344441107-ef12287e4872?w=800"
     },
     {
       "id": "bioestimulador",
       "name": "Skin Glow",
       "desc": "Bioestimulador pra pele radiante e firme.",
-      "img": "https://images.unsplash.com/photo-1559599101-f09722fb4948?w=800"
+      "img": "https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=800"
     }
   ],
   "combos": [
@@ -113,6 +113,16 @@ export const CLINIC = {
       "text": "Recomendei pra MINHA mãe. Ela amou também 💕",
       "author": "@beahcoelho"
     }
-  ]
+  ],
+  "images": {
+    "hero": "https://images.unsplash.com/photo-1591386258061-eaab2998b6b9?w=1200&q=80",
+    "procedures": {
+      "harmonizacao-facial": "https://images.unsplash.com/photo-1614859270522-fbeed5b1d54e?w=800",
+      "preenchimento-labial": "https://images.unsplash.com/photo-1614859124192-30334e3f2c1c?w=800",
+      "botox": "https://images.unsplash.com/photo-1612344441107-ef12287e4872?w=800",
+      "bioestimulador": "https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=800"
+    },
+    "_note": "Royal Face não tem site oficial — usamos curadoria Unsplash boutique"
+  }
 } as const;
 export type ClinicConfig = typeof CLINIC;

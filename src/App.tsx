@@ -26,6 +26,7 @@ import Pricing from './components/Pricing';
 import BestSellers from './components/BestSellers';
 import Signature from './components/Signature';
 import Results from './components/Results';
+import Gallery from './components/Gallery';
 import Visit from './components/Visit';
 import Schedule from './components/Schedule';
 import FAQ from './components/FAQ';
@@ -38,7 +39,7 @@ const COMPONENTS: Record<string, React.ComponentType> = {
   Hero, Differentials, Procedures, Numbers, Doctor, History, Protocol,
   Simulator, BeforeAfter, Testimonials, Press, Awards, Units, Facilities,
   Combos, Financing, Education, Partners, Pricing, BestSellers, Signature,
-  Results, Visit, Schedule, FAQ, Footer,
+  Results, Gallery, Visit, Schedule, FAQ, Footer,
 };
 
 export default function App() {
