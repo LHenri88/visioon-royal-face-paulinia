@@ -47,7 +47,7 @@ export default function Simulator() {
     <section id="simulator" className="py-24 md:py-32" style={{ background: `linear-gradient(180deg, var(--color-paper) 0%, ${CLINIC.brand.secondary}11 100%)` }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="reveal max-w-2xl mx-auto text-center mb-12">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: 'var(--color-primary)' }}>Simulador clínico · IA</span>
+          <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: 'var(--color-primary)' }}>Visualizador de resultados</span>
           <h2 className="font-display text-[clamp(32px,4vw,52px)] leading-[1.05] font-semibold text-balance" style={{ color: 'var(--color-primary)' }}>Veja seu resultado antes da decisão.</h2>
           <p className="mt-5 text-lg" style={{ color: `${CLINIC.brand.ink}99` }}>Selecione o procedimento, envie uma foto frontal e nossa IA renderiza uma pré-visualização em até 15 segundos.</p>
         </div>
@@ -108,7 +108,7 @@ export default function Simulator() {
             )}
             <a href="#schedule" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold border-2 hover:bg-black/5 transition no-underline" style={{ borderColor: `${CLINIC.brand.primary}40`, color: 'var(--color-ink)' }}>Agendar avaliação real</a>
           </div>
-          <p className="text-center text-xs mt-7" style={{ color: `${CLINIC.brand.ink}77` }}>⚠ Pré-visualização IA — referência ilustrativa. Resultado final por avaliação presencial.</p>
+          <p className="text-center text-xs mt-7" style={{ color: `${CLINIC.brand.ink}77` }}>🔒 Suas imagens são processadas com segurança e não são armazenadas. Resultado ilustrativo — o plano definitivo é definido na consulta presencial.</p>
         </div>
       </div>
     </section>

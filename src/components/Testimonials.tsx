@@ -1,29 +1,39 @@
-import { Quote } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { CLINIC } from '../clinic.config';
-import { SectionHead } from './Section';
+
+function TestimonialCard({ t }: { t: any }) {
+  return (
+    <article className="shrink-0 w-[340px] md:w-[380px] glass-dark rounded-3xl p-8 border border-white/10 mx-3">
+      <div className="flex gap-1 mb-4">
+        {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="currentColor" style={{ color: CLINIC.brand.accent }} />)}
+      </div>
+      <p className="text-[15px] leading-relaxed italic opacity-95 mb-6">"{t.text}"</p>
+      <div className="flex items-center gap-3">
+        <div className="w-11 h-11 rounded-full grid place-items-center font-bold shrink-0" style={{ background: CLINIC.brand.accent, color: CLINIC.brand.primary }}>{t.author[0]}</div>
+        <div className="text-sm font-semibold">{t.author}</div>
+      </div>
+    </article>
+  );
+}
 
 export default function Testimonials() {
   const items: any[] = (CLINIC as any).testimonials_real || [];
   if (!items.length) return null;
+  const doubled = [...items, ...items, ...items]; // triplicar para loop suave
   return (
     <section id="testimonials" className="py-24 md:py-32 text-white relative overflow-hidden" style={{ background: 'var(--color-primary)' }}>
-      <div className="absolute inset-0 opacity-30 pointer-events-none" style={{ background: `radial-gradient(circle at 20% 30%, ${CLINIC.brand.accent}55, transparent 50%), radial-gradient(circle at 80% 70%, ${CLINIC.brand.secondary}55, transparent 50%)` }} />
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="reveal max-w-2xl mx-auto text-center mb-14">
+      <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ background: `radial-gradient(ellipse at 20% 50%, ${CLINIC.brand.accent}66, transparent 55%), radial-gradient(ellipse at 80% 50%, ${CLINIC.brand.secondary}66, transparent 55%)` }} />
+      <div className="relative">
+        <div className="reveal max-w-2xl mx-auto text-center mb-14 px-6">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: CLINIC.brand.accent }}>O que dizem</span>
-          <h2 className="font-display text-[clamp(32px,4vw,52px)] leading-[1.05] font-semibold text-balance">Pacientes reais. Depoimentos reais.</h2>
+          <h2 className="font-display text-[clamp(32px,4vw,52px)] leading-[1.05] font-semibold text-balance">Pacientes reais.</h2>
+          <p className="mt-4 text-lg opacity-80">Resultados que falam por si.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {items.map((t: any, i: number) => (
-            <article key={i} className="reveal glass-dark rounded-3xl p-8 border border-white/10" style={{ transitionDelay: `${i * 80}ms` }}>
-              <Quote size={28} style={{ color: CLINIC.brand.accent }} className="mb-4 opacity-80" />
-              <p className="text-[15px] leading-relaxed italic opacity-95 mb-6">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full grid place-items-center font-bold" style={{ background: CLINIC.brand.accent, color: CLINIC.brand.primary }}>{t.author[0]}</div>
-                <div><div className="text-sm font-semibold">{t.author}</div></div>
-              </div>
-            </article>
-          ))}
+        {/* Carrossel infinito — pausa no hover */}
+        <div className="overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)' }}>
+          <div className="flex testimonial-carousel" style={{ width: 'max-content' }}>
+            {doubled.map((t: any, i: number) => <TestimonialCard key={i} t={t} />)}
+          </div>
         </div>
       </div>
     </section>

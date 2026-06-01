@@ -10,7 +10,7 @@ export default function Nav() {
   }, []);
   const links = [
     { id: 'procedures', label: 'Procedimentos' },
-    { id: 'simulator', label: 'Simulador IA' },
+    { id: 'simulator', label: 'Simulador' },
     { id: 'testimonials', label: 'Resultados' },
     { id: 'schedule', label: 'Agendar' },
   ];

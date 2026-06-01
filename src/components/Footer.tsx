@@ -23,20 +23,20 @@ export default function Footer() {
           <div>
             <h4 className="font-display text-base mb-4" style={{ color: CLINIC.brand.accent }}>Navegar</h4>
             <a href="#procedures" className="block text-sm opacity-70 hover:opacity-100 mb-2 no-underline text-white">Procedimentos</a>
-            <a href="#simulator" className="block text-sm opacity-70 hover:opacity-100 mb-2 no-underline text-white">Simulador IA</a>
+            <a href="#simulator" className="block text-sm opacity-70 hover:opacity-100 mb-2 no-underline text-white">Visualizador</a>
             <a href="#testimonials" className="block text-sm opacity-70 hover:opacity-100 mb-2 no-underline text-white">Resultados</a>
             <a href="#schedule" className="block text-sm opacity-70 hover:opacity-100 mb-2 no-underline text-white">Agendar</a>
           </div>
           <div>
-            <h4 className="font-display text-base mb-4" style={{ color: CLINIC.brand.accent }}>Tecnologia</h4>
-            <p className="text-sm font-semibold mb-1" style={{ color: CLINIC.brand.accent }}>⊹ Powered by VISIOON</p>
-            <p className="text-xs opacity-60">Certeza visual antes da decisão.</p>
-            <p className="text-xs opacity-50 mt-3">Gemini 3.1 · proxy seguro</p>
+            <h4 className="font-display text-base mb-4" style={{ color: CLINIC.brand.accent }}>Atendimento</h4>
+            <p className="text-sm opacity-70 mb-1">Seg–Sex · 8h–19h</p>
+            <p className="text-sm opacity-70 mb-1">Sáb · 8h–13h</p>
+            <a href="#schedule" className="block text-sm font-semibold mt-3 no-underline" style={{ color: CLINIC.brand.accent }}>Agendar consulta →</a>
           </div>
         </div>
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-wrap justify-between text-xs opacity-50 gap-3">
           <span>© 2026 {CLINIC.name}. Todos os direitos reservados.</span>
-          <span>Site demonstrativo · VISIOON IA</span>
+          <span>Todos os procedimentos requerem avaliação clínica presencial.</span>
         </div>
       </div>
     </footer>

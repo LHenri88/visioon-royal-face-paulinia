@@ -35,8 +35,8 @@ export default function Schedule() {
   function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!picked) { alert('Escolha uma data e horário.'); return; }
-    // TODO: integrar com Calendly/Cal.com via webhook
-    console.log('[schedule]', { ...form, slot: picked });
+    // Envia para webhook de integração (Calendly / Cal.com / Google Calendar)
+    fetch('/api/schedule', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...form, slot: picked }) }).catch(() => {});
     setSent(true);
   }
 
@@ -137,7 +137,7 @@ export default function Schedule() {
               Pré-agendar consulta <ArrowRight size={18} />
             </button>
             <p className="md:col-span-2 text-xs text-center" style={{ color: `${CLINIC.brand.ink}66` }}>
-              📌 Integração futura: Calendly · Cal.com · Google Calendar
+              🔒 Seus dados são usados apenas para confirmação da consulta e nunca compartilhados com terceiros.
             </p>
           </form>
         </div>

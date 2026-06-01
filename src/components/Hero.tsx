@@ -41,9 +41,9 @@ export default function Hero() {
           <div className="orb absolute w-44 h-44 rounded-full blur-3xl" style={{ background: `${CLINIC.brand.accent}88`, top: '12%', left: '14%' }} />
           <div className="orb orb-2 absolute w-52 h-52 rounded-full blur-3xl" style={{ background: `${CLINIC.brand.secondary}88`, bottom: '14%', right: '10%' }} />
           <div className="relative text-center z-10">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs uppercase tracking-widest glass-dark mb-5">⊹ Visioon IA · {CLINIC.name}</span>
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs uppercase tracking-widest glass-dark mb-5">{CLINIC.category}</span>
             <h3 className="font-display text-4xl leading-tight font-semibold mb-3 text-balance">{CLINIC.slogan}</h3>
-            <p className="text-sm opacity-85 max-w-xs mx-auto">Veja seu resultado clínico antes de marcar a primeira avaliação.</p>
+            <p className="text-sm opacity-85 max-w-xs mx-auto">{CLINIC.tagline}</p>
           </div>
           <div className="scroll-hint absolute bottom-8 left-1/2 text-[10px] tracking-[0.3em] uppercase opacity-60">↓ role para simular</div>
         </div>
