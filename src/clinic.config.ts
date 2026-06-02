@@ -51,25 +51,25 @@ export const CLINIC = {
       "id": "harmonizacao-facial",
       "name": "Harmonização Facial",
       "desc": "Combo top — equilíbrio facial pensado pra você.",
-      "img": "https://images.unsplash.com/photo-1614859270522-fbeed5b1d54e?w=800"
+      "img": "/img/photo-1559599101-f09722fb4948-ef9fbc.jpg"
     },
     {
       "id": "preenchimento-labial",
       "name": "Boca dos Sonhos",
       "desc": "Ácido hialurônico premium com aplicação delicada.",
-      "img": "https://images.unsplash.com/photo-1614859124192-30334e3f2c1c?w=800"
+      "img": "/img/photo-1612349317150-e413f6a5b16d-3a3be9.jpg"
     },
     {
       "id": "botox",
       "name": "Botox Preventivo",
       "desc": "Pra quem quer começar cedo, sem exagero.",
-      "img": "https://images.unsplash.com/photo-1612344441107-ef12287e4872?w=800"
+      "img": "/img/photo-1576091160550-2173dba999ef-f4d721.jpg"
     },
     {
       "id": "bioestimulador",
       "name": "Skin Glow",
       "desc": "Bioestimulador pra pele radiante e firme.",
-      "img": "https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=800"
+      "img": "/img/procedure-bio.jpg"
     }
   ],
   "combos": [
@@ -115,14 +115,14 @@ export const CLINIC = {
     }
   ],
   "images": {
-    "hero": "https://images.unsplash.com/photo-1591386258061-eaab2998b6b9?w=1200&q=80",
+    "hero": "/img/photo-1616394584738-fc6e612e71b9-362d9e.jpg",
     "procedures": {
-      "harmonizacao-facial": "https://images.unsplash.com/photo-1614859270522-fbeed5b1d54e?w=800",
-      "preenchimento-labial": "https://images.unsplash.com/photo-1614859124192-30334e3f2c1c?w=800",
-      "botox": "https://images.unsplash.com/photo-1612344441107-ef12287e4872?w=800",
-      "bioestimulador": "https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=800"
+      "harmonizacao-facial": "/img/photo-1559599101-f09722fb4948-ef9fbc.jpg",
+      "preenchimento-labial": "/img/photo-1612349317150-e413f6a5b16d-3a3be9.jpg",
+      "botox": "/img/photo-1576091160550-2173dba999ef-f4d721.jpg",
+      "bioestimulador": "/img/procedure-bio.jpg"
     },
-    "_note": "Royal Face não tem site oficial — usamos curadoria Unsplash boutique"
+    "_note": "Royal Face: curadoria Unsplash de estética facial — site oficial inexistente"
   }
 } as const;
 export type ClinicConfig = typeof CLINIC;
