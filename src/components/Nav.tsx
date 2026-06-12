@@ -3,8 +3,13 @@ import { CLINIC } from '../clinic.config';
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(h > 0 ? window.scrollY / h : 0);
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -30,6 +35,7 @@ export default function Nav() {
           </a>
         </div>
       </div>
+      <div className="nav-progress" style={{ transform: `scaleX(${progress})` }} />
     </nav>
   );
 }

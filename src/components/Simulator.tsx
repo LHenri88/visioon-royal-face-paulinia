@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { Upload, Loader2, Sparkles, RefreshCw, AlertCircle } from 'lucide-react';
 import { CLINIC } from '../clinic.config';
 
-type Phase = 'idle'|'loading'|'done'|'error';
+type Phase = 'idle'|'loading'|'done'|'error'|'quota';
 
 const PROC_LABELS: Record<string,string> = {
   'facetas-porcelana':'Facetas','implante-dentario':'Implante','lente-contato-dental':'Lente','clareamento':'Clareamento',
@@ -35,10 +35,13 @@ export default function Simulator() {
         body: JSON.stringify({ userB64: user.b64, userMime: user.mime, procedure: proc, clinicSlug: CLINIC.slug }),
       });
       const j = await r.json();
+      if (r.status === 503 || j.error === 'QUOTA_EXCEEDED') {
+        setErr(j.userMessage || 'Simulador temporariamente indisponível. Agende uma consulta!');
+        setPhase('quota'); return;
+      }
       if (!r.ok) throw new Error(j.error || 'Erro do servidor');
-      const parts = j?.response?.candidates?.[0]?.content?.parts || [];
-      const img = parts.find((p:any)=>p.inlineData)?.inlineData;
-      if (!img) throw new Error('Sem imagem na resposta (modo demo).');
+      const img = j?.image;
+      if (!img?.data) throw new Error('Sem imagem na resposta.');
       setResult(`data:${img.mimeType};base64,${img.data}`); setPhase('done');
     } catch (e:any) { setErr(e.message); setPhase('error'); }
   }
@@ -81,7 +84,14 @@ export default function Simulator() {
                     <p className="text-sm font-medium" style={{ color: 'var(--color-primary)' }}>renderizando…</p>
                   </div>
                 </div>
-              ) : result ? <img src={result} className="w-full h-full object-cover" /> : phase==='error' ? (
+              ) : result ? <img src={result} className="w-full h-full object-cover" /> : phase==='quota' ? (
+                <div className="text-center px-6">
+                  <Sparkles size={36} className="mx-auto mb-3" style={{ color: 'var(--color-accent)' }} />
+                  <p className="text-sm font-semibold mb-2" style={{ color: 'var(--color-primary)' }}>Simulador em alta demanda!</p>
+                  <p className="text-xs opacity-70 mb-4 max-w-xs">{err}</p>
+                  <a href="#schedule" className="inline-block px-5 py-2.5 rounded-full text-xs font-semibold text-white no-underline" style={{ background: 'var(--color-primary)' }}>Agendar consulta →</a>
+                </div>
+              ) : phase==='error' ? (
                 <div className="text-center px-6">
                   <AlertCircle size={36} className="mx-auto mb-3 text-red-500" />
                   <p className="text-sm font-medium mb-1" style={{ color: 'var(--color-ink)' }}>Erro</p>
