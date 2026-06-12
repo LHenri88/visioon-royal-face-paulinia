@@ -30,7 +30,7 @@ export default function Nav() {
           {links.map((l) => (
             <a key={l.id} href={`#${l.id}`} className="opacity-70 hover:opacity-100 transition no-underline" style={{ color: 'var(--color-ink)' }}>{l.label}</a>
           ))}
-          <a href="#schedule" className="px-5 py-2.5 rounded-full font-semibold text-white text-sm transition-transform hover:-translate-y-0.5 no-underline" style={{ background: 'var(--color-primary)' }}>
+          <a href="#schedule" className="btn-shine px-5 py-2.5 rounded-full font-semibold text-white text-sm transition-transform hover:-translate-y-0.5 no-underline" style={{ background: 'var(--color-primary)' }}>
             {CLINIC.cta_primary || 'Agendar'}
           </a>
         </div>

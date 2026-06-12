@@ -49,7 +49,7 @@ export default function Hero() {
           </h1>
           <p ref={subRef} className="mt-7 text-lg md:text-xl max-w-xl text-pretty" style={{ color: `${CLINIC.brand.ink}cc` }}>{CLINIC.hero.sub}</p>
           <div ref={ctaRef} className="mt-9 flex flex-wrap gap-4">
-            <a href="#simulator" className="px-7 py-4 rounded-full font-semibold text-white shadow-xl hover:-translate-y-0.5 transition-all no-underline" style={{ background: 'var(--color-primary)', boxShadow: `0 16px 40px ${CLINIC.brand.primary}33` }}>{CLINIC.cta_primary}</a>
+            <a href="#simulator" className="btn-shine px-7 py-4 rounded-full font-semibold text-white shadow-xl hover:-translate-y-0.5 transition-all no-underline" style={{ background: 'var(--color-primary)', boxShadow: `0 16px 40px ${CLINIC.brand.primary}33` }}>{CLINIC.cta_primary}</a>
             <a href="#schedule" className="px-7 py-4 rounded-full font-semibold border-2 hover:-translate-y-0.5 transition-all no-underline" style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }}>Agendar avaliação</a>
           </div>
 
@@ -79,7 +79,7 @@ export default function Hero() {
           {/* imagem principal */}
           <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden shadow-2xl group" style={{ boxShadow: `0 40px 100px ${CLINIC.brand.primary}33` }}>
             {heroImg ? (
-              <img src={heroImg} alt={CLINIC.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              <img src={heroImg} alt={CLINIC.name} fetchPriority="high" decoding="async" className="w-full h-full object-cover hero-kenburns" />
             ) : (
               <div className="w-full h-full grid place-items-center" style={{ background: `linear-gradient(135deg, ${CLINIC.brand.primary}, ${CLINIC.brand.secondary})` }}>
                 <span className="text-white font-display text-3xl">{CLINIC.brand.logo_glyph}</span>
@@ -94,13 +94,13 @@ export default function Hero() {
           </div>
 
           {/* floating badge card top-right */}
-          <div className="absolute -top-4 -right-4 lg:-right-8 bg-white rounded-2xl px-5 py-3 shadow-xl border" style={{ borderColor: `${CLINIC.brand.primary}15` }}>
+          <div className="float-anim absolute -top-4 -right-4 lg:-right-8 bg-white rounded-2xl px-5 py-3 shadow-xl border" style={{ borderColor: `${CLINIC.brand.primary}15` }}>
             <div className="text-[10px] font-semibold uppercase tracking-widest opacity-60 mb-0.5">Hoje</div>
             <div className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>+8 consultas</div>
           </div>
 
           {/* floating mini-card bottom-left */}
-          <div className="absolute -bottom-4 -left-4 lg:-left-8 bg-white rounded-2xl px-5 py-3 shadow-xl border flex items-center gap-3" style={{ borderColor: `${CLINIC.brand.primary}15` }}>
+          <div className="float-anim-2 absolute -bottom-4 -left-4 lg:-left-8 bg-white rounded-2xl px-5 py-3 shadow-xl border flex items-center gap-3" style={{ borderColor: `${CLINIC.brand.primary}15` }}>
             <div className="w-10 h-10 rounded-full grid place-items-center" style={{ background: `${CLINIC.brand.primary}15` }}>
               <span style={{ color: 'var(--color-primary)' }}>✓</span>
             </div>

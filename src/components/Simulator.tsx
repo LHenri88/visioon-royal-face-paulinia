@@ -55,7 +55,7 @@ export default function Simulator() {
           <p className="mt-5 text-lg" style={{ color: `${CLINIC.brand.ink}99` }}>Selecione o procedimento, envie uma foto frontal e nossa IA renderiza uma pré-visualização em até 15 segundos.</p>
         </div>
 
-        <div className="reveal bg-white rounded-[28px] p-6 md:p-12 shadow-2xl border" style={{ borderColor: `${CLINIC.brand.primary}15`, boxShadow: `0 30px 90px ${CLINIC.brand.primary}1f` }}>
+        <div className="reveal glow-pulse bg-white rounded-[28px] p-6 md:p-12 shadow-2xl border" style={{ borderColor: `${CLINIC.brand.primary}15`, boxShadow: `0 30px 90px ${CLINIC.brand.primary}1f` }}>
           <div className="flex flex-wrap gap-3 justify-center mb-10">
             {procs.map((p) => (
               <button key={p} onClick={() => setProc(p)} className="px-5 py-2.5 rounded-full text-sm font-medium border transition-all hover:-translate-y-0.5"

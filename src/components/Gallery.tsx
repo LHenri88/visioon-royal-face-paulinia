@@ -15,7 +15,7 @@ export default function Gallery() {
         <div className="flex gap-4 marquee" style={{ width: 'max-content' }}>
           {doubled.map((src, i) => (
             <div key={i} className="shrink-0 w-[280px] sm:w-[340px] aspect-[4/3] rounded-2xl overflow-hidden border bg-gray-100" style={{ borderColor: `${CLINIC.brand.primary}15` }}>
-              <img src={src} alt="ambiente" className="w-full h-full object-cover" loading="lazy" />
+              <img src={src} alt="ambiente" className="w-full h-full object-cover" />
             </div>
           ))}
         </div>

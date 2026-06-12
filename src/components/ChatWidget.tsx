@@ -29,7 +29,7 @@ export default function ChatWidget() {
   }
 
   return (<>
-    <button onClick={() => setOpen(v=>!v)} className="fixed bottom-6 right-6 w-16 h-16 rounded-full grid place-items-center text-white z-50 shadow-2xl hover:scale-110 transition-transform" style={{ background: 'var(--color-primary)', boxShadow: `0 16px 50px ${CLINIC.brand.primary}80` }} aria-label="Abrir chat">
+    <button onClick={() => setOpen(v=>!v)} className="chat-pulse fixed bottom-6 right-6 w-16 h-16 rounded-full grid place-items-center text-white z-50 shadow-2xl hover:scale-110 transition-transform" style={{ background: 'var(--color-primary)', boxShadow: `0 16px 50px ${CLINIC.brand.primary}80` }} aria-label="Abrir chat">
       {open ? <X size={26} /> : <MessageCircle size={26} />}
     </button>
     {open && (

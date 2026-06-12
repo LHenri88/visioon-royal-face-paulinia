@@ -66,3 +66,21 @@ button:active{transform:scale(.97)}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 img{user-select:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none;filter:none}}
+
+/* ===== v7 motion pack — animações visíveis ===== */
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.09)}}
+.hero-kenburns{animation:kenburns 16s ease-in-out infinite alternate;will-change:transform}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.float-anim{animation:floatY 5.5s ease-in-out infinite}
+.float-anim-2{animation:floatY 6.5s ease-in-out infinite;animation-delay:-2.2s}
+.btn-shine{position:relative;overflow:hidden}
+@keyframes btnShine{0%,55%{left:-80%}100%{left:130%}}
+.btn-shine::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:btnShine 4.5s ease-in-out infinite;pointer-events:none}
+.kicker-bar{display:block;width:46px;height:3px;border-radius:99px;margin:0 auto 16px;background:linear-gradient(90deg,var(--color-primary),var(--color-accent))}
+@keyframes glowPulse{0%,100%{box-shadow:0 30px 90px color-mix(in srgb,var(--color-primary) 12%,transparent)}50%{box-shadow:0 30px 110px color-mix(in srgb,var(--color-primary) 28%,transparent)}}
+.glow-pulse{animation:glowPulse 5s ease-in-out infinite}
+@keyframes chatPing{0%{transform:scale(1);opacity:.45}80%,100%{transform:scale(1.65);opacity:0}}
+.chat-pulse::before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--color-primary);animation:chatPing 2.6s cubic-bezier(0,0,.2,1) infinite;z-index:-1}
+@keyframes gridDrift{from{background-position:0 0}to{background-position:28px 28px}}
+.dot-grid{animation:gridDrift 24s linear infinite}
+img{background:#00000008}
