@@ -12,12 +12,7 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.timeline({ defaults: { ease: 'power3.out' } })
-        .from(headlineRef.current, { y: 50, opacity: 0, duration: 1.1 })
-        .from(subRef.current, { y: 28, opacity: 0, duration: 0.9 }, '-=0.7')
-        .from(ctaRef.current, { y: 20, opacity: 0, duration: 0.7 }, '-=0.5')
-        .from(visualRef.current, { scale: 0.95, opacity: 0, duration: 1.2 }, '-=1.0');
-
+      // intro agora é CSS (.hero-in) — gsap fica só com o parallax
       // parallax mouse-move sutil no visual
       const onMove = (e: MouseEvent) => {
         if (!visualRef.current) return;
@@ -44,11 +39,11 @@ export default function Hero() {
             <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--color-accent)' }} />
             {CLINIC.hero.kicker}
           </span>
-          <h1 ref={headlineRef} className="font-display text-[clamp(40px,5.5vw,72px)] leading-[1.02] font-semibold text-balance" style={{ color: 'var(--color-primary)' }}>
+          <h1 ref={headlineRef} className="hero-in hero-in-1 font-display text-[clamp(40px,5.5vw,72px)] leading-[1.02] font-semibold text-balance" style={{ color: 'var(--color-primary)' }}>
             {CLINIC.hero.headline}
           </h1>
-          <p ref={subRef} className="mt-7 text-lg md:text-xl max-w-xl text-pretty" style={{ color: `${CLINIC.brand.ink}cc` }}>{CLINIC.hero.sub}</p>
-          <div ref={ctaRef} className="mt-9 flex flex-wrap gap-4">
+          <p ref={subRef} className="hero-in hero-in-2 mt-7 text-lg md:text-xl max-w-xl text-pretty" style={{ color: `${CLINIC.brand.ink}cc` }}>{CLINIC.hero.sub}</p>
+          <div ref={ctaRef} className="hero-in hero-in-3 mt-9 flex flex-wrap gap-4">
             <a href="#simulator" className="btn-shine px-7 py-4 rounded-full font-semibold text-white shadow-xl hover:-translate-y-0.5 transition-all no-underline" style={{ background: 'var(--color-primary)', boxShadow: `0 16px 40px ${CLINIC.brand.primary}33` }}>{CLINIC.cta_primary}</a>
             <a href="#schedule" className="px-7 py-4 rounded-full font-semibold border-2 hover:-translate-y-0.5 transition-all no-underline" style={{ borderColor: 'var(--color-primary)', color: 'var(--color-primary)' }}>Agendar avaliação</a>
           </div>
@@ -72,7 +67,7 @@ export default function Hero() {
         </div>
 
         {/* coluna visual: imagem real */}
-        <div ref={visualRef} className="relative">
+        <div ref={visualRef} className="hero-in hero-in-4 relative">
           {/* shape blob por trás */}
           <div className="absolute -inset-6 rounded-[40px] -z-0" style={{ background: `linear-gradient(135deg, ${CLINIC.brand.secondary}55, ${CLINIC.brand.accent}33)`, filter: 'blur(40px)' }} />
 
